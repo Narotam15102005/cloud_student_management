@@ -1,1 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>EduCloud | Student Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     SIDEBAR
+================================================== -->
+
+<aside class="sidebar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            🎓
+        </div>
+
+        <div>
+
+            <h2>EduCloud</h2>
+
+            <span>
+                Student Management
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <a href="#dashboard"
+           class="nav-link active">
+
+            <span>📊</span>
+            Dashboard
+
+        </a>
+
+
+        <a href="#students"
+           class="nav-link">
+
+            <span>👨‍🎓</span>
+            Students
+
+        </a>
+
+
+        <a href="#analytics"
+           class="nav-link">
+
+            <span>📈</span>
+            Analytics
+
+        </a>
+
+
+        <a href="#about"
+           class="nav-link">
+
+            <span>☁️</span>
+            Cloud System
+
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="cloud-status">
+
+            <span class="online-dot"></span>
+
+            <div>
+
+                <strong>
+                    Cloud Ready
+                </strong>
+
+                <small>
+                    System Online
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <button class="theme-btn"
+                onclick="toggleTheme()">
+
+            🌙
+            <span>
+                Dark Mode
+            </span>
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+
+<!-- ==================================================
+     MAIN CONTENT
+================================================== -->
+
+<main class="main-content">
+
+
+<!-- ==================================================
+     TOPBAR
+================================================== -->
+
+<header class="topbar">
+
+    <div>
+
+        <span class="welcome-label">
+            STUDENT MANAGEMENT
+        </span>
+
+        <h1>
+            Good Morning 👋
+        </h1>
+
+        <p>
+            Manage your students and academic information.
+        </p>
+
+    </div>
+
+
+    <div class="top-actions">
+
+        <button class="icon-btn"
+                onclick="toggleTheme()">
+
+            🌙
+
+        </button>
+
+
+        <button class="profile">
+
+            <div class="profile-avatar">
+                A
+            </div>
+
+            <div>
+
+                <strong>
+                    Admin
+                </strong>
+
+                <small>
+                    Administrator
+                </small>
+
+            </div>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- ==================================================
+     DASHBOARD
+================================================== -->
+
+<section id="dashboard"
+         class="page-section">
+
+
+    <div class="hero-card">
+
+        <div>
+
+            <span>
+                CLOUD STUDENT MANAGEMENT
+            </span>
+
+            <h2>
+                Manage students.
+                <br>
+                Track success.
+            </h2>
+
+            <p>
+                A centralized digital platform to manage
+                student records, attendance and academic performance.
+            </p>
+
+
+            <button class="hero-btn"
+                    onclick="openStudentModal()">
+
+                + Add New Student
+
+            </button>
+
+        </div>
+
+
+        <div class="hero-illustration">
+
+            <div class="floating-cap">
+                🎓
+            </div>
+
+            <div class="circle-one"></div>
+
+            <div class="circle-two"></div>
+
+            <div class="student-emoji">
+                👨‍🎓
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- STATISTICS -->
+
+    <div class="stats-grid">
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon purple">
+                👨‍🎓
+            </div>
+
+            <div>
+
+                <span>
+                    Total Students
+                </span>
+
+                <h2 id="totalStudents">
+                    0
+                </h2>
+
+                <small class="positive">
+                    ↑ Active records
+                </small>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon blue">
+                📚
+            </div>
+
+            <div>
+
+                <span>
+                    Departments
+                </span>
+
+                <h2 id="totalDepartments">
+                    0
+                </h2>
+
+                <small>
+                    Academic departments
+                </small>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon green">
+                ✅
+            </div>
+
+            <div>
+
+                <span>
+                    Avg Attendance
+                </span>
+
+                <h2 id="averageAttendance">
+                    0%
+                </h2>
+
+                <small class="positive">
+                    Current average
+                </small>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon orange">
+                ⭐
+            </div>
+
+            <div>
+
+                <span>
+                    Avg CGPA
+                </span>
+
+                <h2 id="averageCGPA">
+                    0.0
+                </h2>
+
+                <small>
+                    Academic performance
+                </small>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     STUDENTS
+================================================== -->
+
+<section id="students"
+         class="page-section students-section">
+
+
+    <div class="section-header">
+
+        <div>
+
+            <span>
+                STUDENT DIRECTORY
+            </span>
+
+            <h2>
+                Student Records
+            </h2>
+
+            <p>
+                View and manage all registered students.
+            </p>
+
+        </div>
+
+
+        <button class="add-btn"
+                onclick="openStudentModal()">
+
+            + Add Student
+
+        </button>
+
+    </div>
+
+
+
+    <!-- SEARCH -->
+
+    <div class="filter-bar">
+
+        <div class="search-box">
+
+            <span>
+                🔎
+            </span>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search by name, roll number or email..."
+                oninput="renderStudents()"
+            >
+
+        </div>
+
+
+        <select id="departmentFilter"
+                onchange="renderStudents()">
+
+            <option value="all">
+                All Departments
+            </option>
+
+            <option value="CSE">
+                Computer Science
+            </option>
+
+            <option value="ECE">
+                Electronics
+            </option>
+
+            <option value="EEE">
+                Electrical
+            </option>
+
+            <option value="MECH">
+                Mechanical
+            </option>
+
+            <option value="CIVIL">
+                Civil
+            </option>
+
+        </select>
+
+
+        <button class="export-btn"
+                onclick="exportStudents()">
+
+            📥 Export
+
+        </button>
+
+    </div>
+
+
+
+    <!-- TABLE -->
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        STUDENT
+                    </th>
+
+                    <th>
+                        ROLL NUMBER
+                    </th>
+
+                    <th>
+                        DEPARTMENT
+                    </th>
+
+                    <th>
+                        ATTENDANCE
+                    </th>
+
+                    <th>
+                        CGPA
+                    </th>
+
+                    <th>
+                        STATUS
+                    </th>
+
+                    <th>
+                        ACTIONS
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="studentTable">
+
+            </tbody>
+
+        </table>
+
+
+        <div id="emptyState"
+             class="empty-state">
+
+            <div>
+                🎓
+            </div>
+
+            <h3>
+                No students found
+            </h3>
+
+            <p>
+                Add your first student to get started.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     ANALYTICS
+================================================== -->
+
+<section id="analytics"
+         class="page-section analytics-section">
+
+
+    <div class="section-header">
+
+        <div>
+
+            <span>
+                ACADEMIC INSIGHTS
+            </span>
+
+            <h2>
+                Student Analytics
+            </h2>
+
+            <p>
+                Overview of academic performance.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="analytics-grid">
+
+
+        <div class="analytics-card">
+
+            <div class="analytics-title">
+
+                <div>
+
+                    <h3>
+                        Department Distribution
+                    </h3>
+
+                    <p>
+                        Students by department
+                    </p>
+
+                </div>
+
+                <span>
+                    📊
+                </span>
+
+            </div>
+
+
+            <div id="departmentChart"
+                 class="bar-chart">
+
+            </div>
+
+        </div>
+
+
+
+        <div class="analytics-card">
+
+            <div class="analytics-title">
+
+                <div>
+
+                    <h3>
+                        Performance Overview
+                    </h3>
+
+                    <p>
+                        Academic indicators
+                    </p>
+
+                </div>
+
+                <span>
+                    ⭐
+                </span>
+
+            </div>
+
+
+            <div class="performance-list">
+
+
+                <div class="performance-item">
+
+                    <div>
+
+                        <span>
+                            Attendance
+                        </span>
+
+                        <strong id="attendanceValue">
+                            0%
+                        </strong>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div id="attendanceProgress">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="performance-item">
+
+                    <div>
+
+                        <span>
+                            Academic CGPA
+                        </span>
+
+                        <strong id="cgpaValue">
+                            0
+                        </strong>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div id="cgpaProgress">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     CLOUD SYSTEM
+================================================== -->
+
+<section id="about"
+         class="cloud-section">
+
+
+    <div class="cloud-content">
+
+        <div>
+
+            <span>
+                ☁️ CLOUD COMPUTING
+            </span>
+
+            <h2>
+                Built for the Cloud
+            </h2>
+
+            <p>
+                EduCloud provides a centralized architecture
+                for managing student information. The frontend
+                can be connected to a cloud database for
+                multi-device access and real-time synchronization.
+            </p>
+
+
+            <div class="cloud-features">
+
+                <div>
+                    ✓ Centralized Data
+                </div>
+
+                <div>
+                    ✓ Scalable Architecture
+                </div>
+
+                <div>
+                    ✓ Multi-Device Access
+                </div>
+
+                <div>
+                    ✓ Secure Management
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="cloud-graphic">
+
+            <div class="cloud-main">
+                ☁️
+            </div>
+
+            <div class="cloud-node node-one">
+                👨‍🎓
+            </div>
+
+            <div class="cloud-node node-two">
+                📊
+            </div>
+
+            <div class="cloud-node node-three">
+                📚
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<footer>
+
+    <div class="footer-brand">
+        🎓 EduCloud
+    </div>
+
+    <p>
+        Cloud Student Management System
+    </p>
+
+    <small>
+        © 2026 EduCloud • Cloud Computing Mini Project
+    </small>
+
+</footer>
+
+
+</main>
+
+
+
+<!-- ==================================================
+     ADD / EDIT STUDENT MODAL
+================================================== -->
+
+<div id="studentModal"
+     class="modal">
+
+
+    <div class="modal-box">
+
+
+        <button class="close-modal"
+                onclick="closeStudentModal()">
+
+            ×
+
+        </button>
+
+
+        <div class="modal-header">
+
+            <div class="modal-icon">
+                🎓
+            </div>
+
+            <div>
+
+                <h2 id="modalTitle">
+                    Add New Student
+                </h2>
+
+                <p>
+                    Enter student information below.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <form id="studentForm"
+              onsubmit="saveStudent(event)">
+
+
+            <input type="hidden"
+                   id="editIndex"
+                   value="-1">
+
+
+            <div class="form-grid">
+
+
+                <div class="form-group full">
+
+                    <label>
+                        Student Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        placeholder="Enter full name"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        Roll Number
+                    </label>
+
+                    <input
+                        type="text"
+                        id="rollNumber"
+                        placeholder="e.g. 23CS101"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="student@email.com"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        Department
+                    </label>
+
+                    <select id="department"
+                            required>
+
+                        <option value="">
+                            Select department
+                        </option>
+
+                        <option value="CSE">
+                            CSE
+                        </option>
+
+                        <option value="ECE">
+                            ECE
+                        </option>
+
+                        <option value="EEE">
+                            EEE
+                        </option>
+
+                        <option value="MECH">
+                            MECH
+                        </option>
+
+                        <option value="CIVIL">
+                            CIVIL
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        Attendance %
+                    </label>
+
+                    <input
+                        type="number"
+                        id="attendance"
+                        min="0"
+                        max="100"
+                        placeholder="85"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        CGPA
+                    </label>
+
+                    <input
+                        type="number"
+                        id="cgpa"
+                        min="0"
+                        max="10"
+                        step="0.1"
+                        placeholder="8.5"
+                        required
+                    >
+
+                </div>
+
+
+            </div>
+
+
+            <div class="form-actions">
+
+                <button type="button"
+                        class="cancel-btn"
+                        onclick="closeStudentModal()">
+
+                    Cancel
+
+                </button>
+
+
+                <button type="submit"
+                        class="save-btn">
+
+                    Save Student
+
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- ==================================================
+     STUDENT DETAILS MODAL
+================================================== -->
+
+<div id="detailsModal"
+     class="modal">
+
+
+    <div class="details-box">
+
+        <button class="close-modal"
+                onclick="closeDetails()">
+
+            ×
+
+        </button>
+
+
+        <div id="studentDetails">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
